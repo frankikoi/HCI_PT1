@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opeña PT1</title>
+    <script src="http://code.jquery.com/jquery-1.5.min.js"></script>
+    <link rel="stylesheet" href="mycss.css">
+</head>
+<form>
+<body>
+
+    <div id = "container">
+                <div class = "content">
+                    <h2>What are you doing now?</h2>
+                    <div>Name</div>
+                        <input type="text" id="name">
+                            <br><br>
+                    <div>Date</div> 
+                        <input type="date" id="date">
+                            <br><br>
+                
+                    <div>Message</div>
+                        <textarea id="textArea" placeholder="Input your message here"></textarea>
+                            <br><br> 
+                            <button id = "button"> Submit </button>
+                    </div>
+    </div>    
+
+    </form>
+    
+</body>
+<script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                var name = $("#name").val();
+                var date = $("#date").val();
+                var textArea = $("#textArea").val();
+                console.log(name, date, textArea);
+
+                $("#container").html(
+                    "<i>Name :</i> " +  name + 
+                    "<br><i>Date :</i> " +  date + "<br>");
+                $("#container").append(textArea);
+        }
+        );
+
+    });
+
+
+</script>
+
+    </html>
